@@ -1,13 +1,17 @@
-//[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-//[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)`
-//[![License: GPL](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
-//[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
-
-
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let badgeUrl = license === '' ? '' : license;
+  let badgeUrl = '';  
+  
+  if (license === 'Apache 2.0') {
+    badgeUrl = 'https://img.shields.io/badge/License-Apache%202.0-blue.svg';
+  } else if (license === 'MIT') {
+    badgeUrl = 'https://img.shields.io/badge/License-MIT-yellow.svg';
+  } else if (license === 'GPL') {
+    badgeUrl = 'https://img.shields.io/badge/license-GPL-blue.svg';
+  } else if (license === 'MPL 2.0') {
+    badgeUrl = 'https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg';
+  }
 
   return badgeUrl;
 }
@@ -15,7 +19,17 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  let linkUrl = license === '' ? '' : license;
+  let linkUrl =  '';  
+  
+  if (license === 'Apache 2.0') {
+    linkUrl = 'https://www.apache.org/licenses/LICENSE-2.0';
+  } else if (license === 'MIT') {
+    linkUrl = 'https://mit-license.org/';
+  } else if (license === 'GPL') {
+    linkUrl = 'https://www.gnu.org/licenses/old-licenses/gpl-1.0.html';
+  } else if (license === 'MPL 2.0') {
+    linkUrl = 'https://www.mozilla.org/en-US/MPL/2.0/';
+  }
 
   return linkUrl;
 }
@@ -23,47 +37,27 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  const badge = renderLicenseBadge();
-  const link  = renderLicenseLink();
-
-  console.log(`${badge} ---- ${link}`);
-
-  /*const output = `![License: ${license}](${badge})](${link})
   
-    All code is released under the [${license} License](${link}).`;
+  let badge = renderLicenseBadge(license);
+  let link  = renderLicenseLink(license);
 
-  return output;*/
+  const output = `[![License: ${license}](${badge})](${link})
+  
+All code is released under the [${license} License](${link}).`;
+
+  return output;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
   const getLicense = renderLicenseSection(data.license);
+
+  let testOpt = data.tests === 'Yes' ? `Here's an example of how to test this software.`: `No test available.`;
+
+  let usageOpt = data.usage === 'Yes' ? `Here are some screenshots of this project.` : `No screenshots available.`;
   
-  if (data.license === 'Apache 2.0') {
-    renderLicenseBadge('https://img.shields.io/badge/License-Apache%202.0-blue.svg');
-    renderLicenseLink('https://www.apache.org/licenses/LICENSE-2.0');
-  } else if (data.license === 'MIT') {
-    renderLicenseBadge('https://img.shields.io/badge/License-MIT-yellow.svg');
-    renderLicenseLink('https://mit-license.org/');
-  } else if (data.license === 'GPL') {
-    renderLicenseBadge('https://img.shields.io/badge/license-GPL-blue.svg');
-    renderLicenseLink('https://www.gnu.org/licenses/old-licenses/gpl-1.0.html');
-  } else if (data.license === 'MPL 2.0') {
-    renderLicenseBadge('https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg');
-    renderLicenseLink('https://www.mozilla.org/en-US/MPL/2.0/');
-  } else {
-    renderLicenseBadge('https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg');
-    renderLicenseLink('https://www.mozilla.org/en-US/MPL/2.0/');
-  }
-
-  //let testOpt = data.tests === 'Yes' ? `Here's an example of how to test this software.`: `No test available.`;
-
-  //let usageOpt = data.usage === 'Yes' ? `Here are some screenshots of this project.` : `No screenshots available.`;
-
-  const output = ${getLicense};
-  
-  /*const output = `# ${data.title} 
+  const output = `# ${data.title} 
 
 ## Table of Contents
 1. [Description](#desc)
@@ -101,7 +95,7 @@ ${testOpt}
 <a name="questions"></a> 
 ## Questions
 If you have any questions regarding this project, please contact me via [${data.email}](${data.email}) or my [GitHub profile](https://github.com/${data.github}).`;
-*/
+
   return output;
 }
 

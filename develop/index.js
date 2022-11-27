@@ -26,7 +26,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer
         .prompt([
-        /*{
+        {
             type: 'input',
             name: 'title',
             message: 'What is the title of your project?',
@@ -45,14 +45,14 @@ function init() {
             type: 'confirm',
             name: 'usage',
             message: 'Do you have screenshots or video of your project in use?',
-        },*/
+        },
         {
             type: 'list',
             name: 'license',
             message: 'What license does your project use?',
             choices: ['Apache 2.0', 'MIT', 'GPL', 'MPL 2.0','None'],
         },
-        /*{
+        {
             type: 'input',
             name: 'contribute',
             message: 'What are your guidelines for developers to contribute?',
@@ -71,7 +71,7 @@ function init() {
             type: 'input',
             name: 'email',
             message: 'Please enter your email address.',
-        },*/
+        },
         ])
         .then((answers) => {
             const readmePageContent = generateMarkdown(answers);
