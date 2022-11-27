@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ['Description', 'Table of Contents', 'Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'];
+const questions = ['title', 'description', 'installation', 'usage', 'license', 'contributing', 'tests', 'questions'];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -16,40 +16,47 @@ function init() {
         .prompt([
         {
             type: 'input',
-            name: 'name',
+            name: 'title',
+            message: 'What is the title of your project?',
+        },
+        {
+            type: 'input',
+            name: 'description',
             message: 'Please provide a description of your project.',
         },
         {
             type: 'input',
-            name: 'location',
-            message: 'Where are you from?',
-        },
-        {
-            type: 'input',
             name: 'installation',
-            message: 'Please provide installation instructions.',
+            message: 'What are the steps to installing your software?',
         },
         {
-            type: 'input',
-            name: 'food',
-            message: 'What is your favorite food?',
+            type: 'confirm',
+            name: 'usage',
+            message: 'Do you have screenshots or video of your software in use?',
+            choices: ['Yes','No'],
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'What license does your project use?',
+            choices: ['Apache 2.0', 'MIT', 'GPL', 'Mozilla Public License 2.0','None'],
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username',
+            message: 'Please enter your GitHub username.',
         },
         {
             type: 'input',
-            name: 'linkedin',
-            message: 'Enter your LinkedIn URL.',
+            name: 'email',
+            message: 'Please enter your email address.',
         },
         ])
         .then((answers) => {
-            const htmlPageContent = generateHTML(answers);
+            const readmePageContent = generateHTML(answers);
     
-            fs.writeFile('index.html', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')
+            fs.writeFile('README.md', readmePageContent, (err) =>
+                err ? console.log(err) : console.log('Successfully created README.md!')
             );
         });
 }
