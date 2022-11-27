@@ -23,14 +23,16 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  let badge = renderLicenseBadge;
-  let link  = renderLicenseLink;
+  const badge = renderLicenseBadge();
+  const link  = renderLicenseLink();
 
-  let output = `![License: ${license}](${badge})](${link})
+  console.log(`${badge} ---- ${link}`);
+
+  /*const output = `![License: ${license}](${badge})](${link})
   
     All code is released under the [${license} License](${link}).`;
 
-  return output;
+  return output;*/
 }
 
 // TODO: Create a function to generate markdown for README
@@ -55,11 +57,13 @@ function generateMarkdown(data) {
     renderLicenseLink('https://www.mozilla.org/en-US/MPL/2.0/');
   }
 
-  let testOpt = data.tests === 'Yes' ? `Here's an example of how to test this software.`: `No test available.`;
+  //let testOpt = data.tests === 'Yes' ? `Here's an example of how to test this software.`: `No test available.`;
 
-  let usageOpt = data.usage === 'Yes' ? `Here's an example of how to test this software.` : `No test available.`;
+  //let usageOpt = data.usage === 'Yes' ? `Here are some screenshots of this project.` : `No screenshots available.`;
+
+  const output = ${getLicense};
   
-  const output = `# ${data.title} 
+  /*const output = `# ${data.title} 
 
 ## Table of Contents
 1. [Description](#desc)
@@ -71,33 +75,33 @@ function generateMarkdown(data) {
 7. [Questions](#questions)
 
 <a name="desc"></a>
-### Description 
+## Description 
 ${data.description}
 
 <a name="install"></a> 
-### Installation
+## Installation
 ${data.install}
 
 <a name="usage"></a> 
-### Usage
+## Usage
 ${usageOpt}
 
 <a name="license"></a> 
-### License
+## License
 ${getLicense}
 
 <a name="contributing"></a> 
-### Contributing
-For guidance on setting up a development environment and how to make a contribution, please contact [${data.email}](${data.email}). 
+## Contributing
+${data.contribute} 
 
 <a name="tests"></a> 
-### Tests
+## Tests
 ${testOpt}
 
 <a name="questions"></a> 
-### Questions
-If you have any questions regarding this project, please contact me at [${data.email}](${data.email}).`;
-
+## Questions
+If you have any questions regarding this project, please contact me via [${data.email}](${data.email}) or my [GitHub profile](https://github.com/${data.github}).`;
+*/
   return output;
 }
 
