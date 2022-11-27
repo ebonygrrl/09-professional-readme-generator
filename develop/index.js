@@ -7,7 +7,12 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ['title', 'description', 'install', 'usage', 'license', 'contribute', 'tests', 'questions'];
+const questions = [
+    {
+    type: 'input',
+    name: 'title',
+    message: 'What is the title of your project?'
+}];// 'description', 'install', 'usage', 'license', 'contribute', 'tests', 'questions'];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -17,12 +22,18 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .prompt([
+        .prompt(
+            questions.forEach(section => {
+                section.type;
+                section.name;
+                section.message;
+            })
+            /*[
         {
             type: 'input',
             name: 'title',
             message: 'What is the title of your project?',
-        },
+        },*/
         /*{
             type: 'input',
             name: 'description',
@@ -42,7 +53,7 @@ function init() {
             type: 'list',
             name: 'license',
             message: 'What license does your project use?',
-            choices: ['Apache 2.0', 'MIT', 'GPL', 'Mozilla Public License 2.0','None'],
+            choices: ['Apache 2.0', 'MIT', 'GPL', 'MPL 2.0','None'],
         },
         {
             type: 'input',
@@ -59,7 +70,8 @@ function init() {
             name: 'email',
             message: 'Please enter your email address.',
         },*/
-        ])
+        //]
+        )
         .then((answers) => {
             const readmePageContent = generateMarkdown(answers);
     
