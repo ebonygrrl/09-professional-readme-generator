@@ -11,9 +11,15 @@ const fs = require('fs');
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.log(err) : console.log('Successfully created README.md!')
-    );
+    fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log('Successfully created README.md!')); 
+    /* Ternary operation 
+    (fileName, data, function(err) {
+        if (err) {
+            console.log(err) 
+        } else {
+            console.log('Successfully created README.md!');
+        }
+    } */
 }
 
 // TODO: Create a function to initialize app
@@ -25,7 +31,7 @@ function init() {
             name: 'title',
             message: 'What is the title of your project?',
         },
-        /*{
+        {
             type: 'input',
             name: 'description',
             message: 'Please provide a description of your project.',
@@ -33,12 +39,12 @@ function init() {
         {
             type: 'input',
             name: 'install',
-            message: 'What are the steps to installing your software?',
+            message: 'How would the user install your project?',
         },
         {
             type: 'confirm',
             name: 'usage',
-            message: 'Do you have screenshots or video of your software in use?',
+            message: 'Do you have screenshots or video of your project in use?',
         },
         {
             type: 'list',
@@ -47,20 +53,15 @@ function init() {
             choices: ['Apache 2.0', 'MIT', 'GPL', 'MPL 2.0','None'],
         },
         {
-            type: 'input',
-            name: 'contribute',
-            message: 'How can developers contribute to your project?',
-        },
-        {
             type: 'confirm',
             name: 'tests',
-            message: 'Are you able to provide examples of your software in use?',
+            message: 'Are you able to provide examples of your project in use?',
         },
         {
             type: 'input',
             name: 'email',
             message: 'Please enter your email address.',
-        },*/
+        },
         ])
         .then((answers) => {
             const readmePageContent = generateMarkdown(answers);
