@@ -7,33 +7,24 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [
-    {
-    type: 'input',
-    name: 'title',
-    message: 'What is the title of your project?'
-}];// 'description', 'install', 'usage', 'license', 'contribute', 'tests', 'questions'];
+//const questions = ['title', 'description', 'install', 'usage', 'license', 'contribute', 'tests', 'questions'];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('Successfully created README.md!')
+    );
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .prompt(
-            questions.forEach(section => {
-                section.type;
-                section.name;
-                section.message;
-            })
-            /*[
+        .prompt([
         {
             type: 'input',
             name: 'title',
             message: 'What is the title of your project?',
-        },*/
+        },
         /*{
             type: 'input',
             name: 'description',
@@ -70,14 +61,11 @@ function init() {
             name: 'email',
             message: 'Please enter your email address.',
         },*/
-        //]
-        )
+        ])
         .then((answers) => {
             const readmePageContent = generateMarkdown(answers);
     
-            fs.writeFile('README.md', readmePageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created README.md!')
-            );
+            writeToFile('README.md', readmePageContent);
         });
 }
 

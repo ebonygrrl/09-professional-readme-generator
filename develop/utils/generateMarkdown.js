@@ -23,7 +23,7 @@ function renderLicenseSection(license) {
 
   } else if (license === 'GPL') {
 
-  } else if (license === 'Mozilla Public License 2.0') {
+  } else if (license === 'MPL 2.0') {
 
   } else {
 
@@ -52,7 +52,10 @@ function generateMarkdown(data) {
 
 module.exports = generateMarkdown;
 
-//[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+//[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+//[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)`
+//[![License: GPL](https://img.shields.io/badge/license-GPL-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+//[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
 
 // https://www.apache.org/licenses/LICENSE-2.0
 // https://mit-license.org/
