@@ -16,15 +16,47 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === 'Apache 2.0') {
+
+  } else if (license === 'MIT') {
+
+  } else if (license === 'GPL') {
+
+  } else if (license === 'Mozilla Public License 2.0') {
+
+  } else {
+
+  }
+
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
 
-`;
+  const newLicense = data.license;
+  
+  const output = `# ${data.title}`; 
+  /*
+  ${data.description}
+  ${data.install}
+  ${data.usage}
+  ${data.license} All code is released under the MIT License.
+  ${data.contribute} For guidance on setting up a development environment and how to make a contribution, please contact
+  ${data.tests} Here's an example of how to test this software.
+  ${data.email} If you have any questions regarding this project, please contact me at
+  `;*/
+
+  return output;
 }
 
 module.exports = generateMarkdown;
 
 //[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+
+// https://www.apache.org/licenses/LICENSE-2.0
+// https://mit-license.org/
+// https://opensource.org/licenses/gpl-license
+// https://www.mozilla.org/en-US/MPL/2.0/
+
+
