@@ -19,7 +19,7 @@ function init() {
             name: 'title',
             message: 'What is the title of your project?',
         },
-        {
+        /*{
             type: 'input',
             name: 'description',
             message: 'Please provide a description of your project.',
@@ -33,7 +33,6 @@ function init() {
             type: 'confirm',
             name: 'usage',
             message: 'Do you have screenshots or video of your software in use?',
-            choices: ['Yes','No'],
         },
         {
             type: 'list',
@@ -50,14 +49,15 @@ function init() {
             type: 'input',
             name: 'email',
             message: 'Please enter your email address.',
-        },
+        },*/
         ])
         .then((answers) => {
-            const readmePageContent = generateHTML(answers);
+            const readmePageContent = generateMarkdown(answers);
+            console.log('contact');
     
-            fs.writeFile('README.md', readmePageContent, (err) =>
+            /*fs.writeFile('README.md', readmePageContent, (err) =>
                 err ? console.log(err) : console.log('Successfully created README.md!')
-            );
+            );*/
         });
 }
 
