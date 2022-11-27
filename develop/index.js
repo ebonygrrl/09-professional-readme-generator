@@ -1,10 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+
+// use module.exports to connect variable generateMarkdown and include function from external file
+const generateMarkdown = require('./utils/generateMarkdown.js'); 
+
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ['title', 'description', 'installation', 'usage', 'license', 'contributing', 'tests', 'questions'];
+const questions = ['title', 'description', 'install', 'usage', 'license', 'contribute', 'tests', 'questions'];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -27,7 +30,7 @@ function init() {
         },
         {
             type: 'input',
-            name: 'installation',
+            name: 'install',
             message: 'What are the steps to installing your software?',
         },
         {
@@ -43,8 +46,13 @@ function init() {
         },
         {
             type: 'input',
-            name: 'github',
-            message: 'Please enter your GitHub username.',
+            name: 'contribute',
+            message: 'How can developers contribute to your project?',
+        },
+        {
+            type: 'confirm',
+            name: 'tests',
+            message: 'Are you able to provide examples of your software in use?',
         },
         {
             type: 'input',
@@ -54,11 +62,10 @@ function init() {
         ])
         .then((answers) => {
             const readmePageContent = generateMarkdown(answers);
-            console.log('contact');
     
-            /*fs.writeFile('README.md', readmePageContent, (err) =>
+            fs.writeFile('README.md', readmePageContent, (err) =>
                 err ? console.log(err) : console.log('Successfully created README.md!')
-            );*/
+            );
         });
 }
 
