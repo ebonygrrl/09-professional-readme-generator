@@ -19,7 +19,11 @@ The application can be invoked by using ```node index.js```
 
 <a name="usage"></a> 
 ## Usage
-Here are some screenshots of this project.
+Here is a screenshot of this project.
+<p align="center">
+
+![screenshot](./img/readme-gen-screenshot.png)
+</p>
 
 ![Project screenshot](./img/readme-gen-screenshot.png)
 
@@ -36,6 +40,10 @@ Contact app creator via info in bio.
 <a name="tests"></a> 
 ## Tests
 Here's an example of how to test this software.
+<p align="center">
+
+[![YouTube thumbnail](./img/youtube-thumb.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
+</p>
 
 [![YouTube thumbnail](https://img.youtube.com/vi/9qAj-_23whw/0.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
 
