@@ -34,7 +34,9 @@ Contact app creator via info in bio.
 <a name="tests"></a> 
 ## Tests
 Here's an example of how to test this software.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9qAj-_23whw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center">
+[![YouTube thumbnail](https://img.youtube.com/vi/9qAj-_23whw/0.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
+</p>
 
 <a name="questions"></a> 
 ## Questions
