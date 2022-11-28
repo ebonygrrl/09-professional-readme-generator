@@ -25,8 +25,6 @@ Here is a screenshot of this project.
 ![screenshot](./img/readme-gen-screenshot.png)
 </p>
 
-![Project screenshot](./img/readme-gen-screenshot.png)
-
 <a name="license"></a> 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)
@@ -44,8 +42,6 @@ Here's an example of how to test this software.
 
 [![YouTube thumbnail](./img/youtube-thumb.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
 </p>
-
-[![YouTube thumbnail](https://img.youtube.com/vi/9qAj-_23whw/0.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
 
 <a name="questions"></a> 
 ## Questions
