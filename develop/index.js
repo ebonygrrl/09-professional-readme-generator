@@ -1,63 +1,81 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+
+// Use module.exports to connect variable generateMarkdown and include function from external file
+const generateMarkdown = require('./utils/generateMarkdown.js'); 
+
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ['title', 'description', 'installation', 'usage', 'license', 'contributing', 'tests', 'questions'];
+const questions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is the title of your project?',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Please provide a description of your project.',
+    },
+    {
+        type: 'input',
+        name: 'install',
+        message: 'How would the user install your project?',
+    },
+    {
+        type: 'confirm',
+        name: 'usage',
+        message: 'Do you have screenshots or video of your project in use?',
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What license does your project use?',
+        choices: ['Apache 2.0', 'MIT', 'GPL', 'MPL 2.0','None'],
+    },
+    {
+        type: 'input',
+        name: 'contribute',
+        message: 'What are your guidelines for developers to contribute?',
+    },
+    {
+        type: 'confirm',
+        name: 'tests',
+        message: 'Are you able to provide examples of your project in use?',
+    },        
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your GitHub username.',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email address.',
+    }];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    fs.writeFile(fileName, data, (err) => err ? console.log(err) : console.log('Successfully created README.md!')); 
+    /* Ternary operation 
+    (fileName, data, function(err) {
+        if (err) {
+            console.log(err) 
+        } else {
+            console.log('Successfully created README.md!');
+        }
+    } */
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .prompt([
-        {
-            type: 'input',
-            name: 'title',
-            message: 'What is the title of your project?',
-        },
-        {
-            type: 'input',
-            name: 'description',
-            message: 'Please provide a description of your project.',
-        },
-        {
-            type: 'input',
-            name: 'installation',
-            message: 'What are the steps to installing your software?',
-        },
-        {
-            type: 'confirm',
-            name: 'usage',
-            message: 'Do you have screenshots or video of your software in use?',
-            choices: ['Yes','No'],
-        },
-        {
-            type: 'list',
-            name: 'license',
-            message: 'What license does your project use?',
-            choices: ['Apache 2.0', 'MIT', 'GPL', 'Mozilla Public License 2.0','None'],
-        },
-        {
-            type: 'input',
-            name: 'github',
-            message: 'Please enter your GitHub username.',
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'Please enter your email address.',
-        },
-        ])
+        .prompt(questions)
         .then((answers) => {
-            const readmePageContent = generateHTML(answers);
+            const readmePageContent = generateMarkdown(answers);
     
-            fs.writeFile('README.md', readmePageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created README.md!')
-            );
+            writeToFile('README.md', readmePageContent);
         });
 }
 
