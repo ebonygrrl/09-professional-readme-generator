@@ -53,9 +53,9 @@ function generateMarkdown(data) {
 
   const getLicense = renderLicenseSection(data.license);
 
-  let testOpt = data.tests === 'Yes' ? `Here's an example of how to test this software.`: `No test available.`;
+  let testOpt = data.tests === true ? `Here's an example of how to test this software.`: `No test available.`;
 
-  let usageOpt = data.usage === 'Yes' ? `Here are some screenshots of this project.` : `No screenshots available.`;
+  let usageOpt = data.usage === true ? `Here are some screenshots of this project.` : `No screenshots available.`;
   
   const output = `# ${data.title} 
 

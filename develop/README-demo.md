@@ -1,4 +1,4 @@
-# test 88 
+# Professional README Generator 
 
 ## Table of Contents
 1. [Description](#desc)
@@ -11,15 +11,15 @@
 
 <a name="desc"></a>
 ## Description 
-dalkf
+A command-line application that dynamically generates a professional README.md file.
 
 <a name="install"></a> 
 ## Installation
-fdaskjhl
+The application can be invoked by using ```node index.js```
 
 <a name="usage"></a> 
 ## Usage
-No screenshots available.
+Here are some screenshots of this project.
 
 <a name="license"></a> 
 ## License
@@ -29,7 +29,7 @@ All code is released under the [GPL License](https://www.gnu.org/licenses/old-li
 
 <a name="contributing"></a> 
 ## Contributing
-fdsakl 
+None. 
 
 <a name="tests"></a> 
 ## Tests
@@ -37,4 +37,4 @@ No test available.
 
 <a name="questions"></a> 
 ## Questions
-If you have any questions regarding this project, please contact me via [fdkal](fdkal) or my [GitHub profile](https://github.com/fldskaj).
+If you have any questions regarding this project, please contact me via [email@email.com](email@email.com) or my [GitHub profile](https://github.com/ebonygrrl).
