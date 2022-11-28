@@ -21,6 +21,8 @@ The application can be invoked by using ```node index.js```
 ## Usage
 Here are some screenshots of this project.
 
+![Project screenshot](./img/readme-gen-screenshot.png)
+
 <a name="license"></a> 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://mit-license.org/)
@@ -34,9 +36,8 @@ Contact app creator via info in bio.
 <a name="tests"></a> 
 ## Tests
 Here's an example of how to test this software.
-<p align="center">
+
 [![YouTube thumbnail](https://img.youtube.com/vi/9qAj-_23whw/0.jpg)](https://www.youtube.com/embed/9qAj-_23whw)
-</p>
 
 <a name="questions"></a> 
 ## Questions
