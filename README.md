@@ -15,7 +15,9 @@ A command-line application that dynamically generates a professional README.md f
 
 <a name="install"></a> 
 ## Installation
-The application can be invoked by using ```node index.js```
+1. Clone this repo
+2. With node.js already installed on your PC, type ```npm install``` into the root directory of the cloned files
+3. The application can then be invoked by using ```node index.js```
 
 <a name="usage"></a> 
 ## Usage
